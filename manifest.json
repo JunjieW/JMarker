@@ -1,0 +1,34 @@
+{
+   "background": {
+      "page": "script/background/background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/marker_pen_inactive128.png",
+      "default_popup": "",
+      "default_title": "click here to en/disable Marker; Ctrl-click to mark scrap",
+      "icons": [ "images/marker_pen_128.png" ],
+      "name": "LMarker"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "css/content.css" ],
+      "js": [ "script/content/content.js" ],
+      "matches": [ "\u003Call_urls\u003E" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": "script-src 'self' https://clients5.google.com; object-src 'self'",
+   "description": "To mark new word or interested scrap on web page for future reading and learning.",
+   "icons": {
+      "128": "images/marker_pen_128.png",
+      "16": "images/marker_pen_16.png",
+      "48": "images/marker_pen_48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDTRDNHiRcpr6nx3y2YNW42eqaoRYEGFPk/4FUVPyDAWkCo+6xYHwIS+qzg719J9o0Sp8xP/9eRy6z1qRxb6PAOMEf7eUvOVvjGUF6yCNvIY7fGTH9aHuz8UjSJgwv45+cCwsdNFK0XZ/rhT/+oRi+1PEtuUyDVdGJ9vGJJtiKCwIDAQAB",
+   "manifest_version": 2,
+   "name": "Learner's Marker",
+   "options_page": "script/options/options.html",
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "https://clients5.google.com/*", "\u003Call_urls\u003E", "contextMenus" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.0.3",
+   "web_accessible_resources": [ "images/del.png", "images/save.png", "css/lm_definition.css" ]
+}
